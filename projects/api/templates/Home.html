@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% block main_block %}
+<h2>Select Province</h2>
+
+    <ul>
+        <label for="Province" id="label">Choose a Province:</label>
+
+        <select name="Province" id="Province">
+            {% for p in Province %}
+                <option value={{p}} selected="selected">{{p}}</option>
+            {% endfor %}
+        </select>
+    </ul>
+
+
+<script>
+var e = document.getElementById("Province");
+var Select_province = e.options[e.selectedIndex].value;
+document.write('<button><a type="button" href="http://127.0.0.1:5000/total/province/' + Select_province + ' ">total</a></button>')
+document.write('<button><a type="button" href="http://127.0.0.1:5000/average/province/' + Select_province + ' ">average</a></button>')
+</script>
+{% endblock %}

@@ -4,6 +4,14 @@ import json
 # api-endpoint
 response = requests.get("https://epistat.sciensano.be/Data/COVID19BE_CASES_AGESEX.json")
 items = response.json()
+# let = set()
+# for s in items:
+#     if 'PROVINCE' in s:
+#         let.add(s['PROVINCE'])
+#         print(let)
+
+
+
 
 # load the json data
 
@@ -31,14 +39,14 @@ items = response.json()
 
 
 # Search data based on key and value using filter and list method
-all = list(filter(lambda x: (x["PROVINCE"] if "PROVINCE" in x else None) == "OostVlaanderen", items))
-total = 0
-i=0
-for case in all:
-    i+=1
-    total += case['CASES']
-print (total)
-
-avg_value = total / i
-print(round(avg_value,2))
+# all = list(filter(lambda x: (x["PROVINCE"] if "PROVINCE" in x else None) == "OostVlaanderen", items))
+# total = 0
+# i=0
+# for case in all:
+#     i+=1
+#     total += case['CASES']
+# print (total)
+#
+# avg_value = total / i
+# print(round(avg_value,2))
 # print(list(filter(lambda x: (x["PROVINCE"] if "PROVINCE" in x else None) == "Brussels",items)))
